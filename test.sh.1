@@ -1,0 +1,29 @@
+.TH TEST.SH 1 test.sh
+.SH NAME
+test.sh \- run tests on a program
+.SH SYNOPSIS
+.B test.sh
+.IR program-path
+.IR test-directory
+.RB [ \-sv ]
+.SH DESCRIPTION
+runs shell script tests on a program. success is indicated by an exit code of 
+0, failure by 1
+.SH ARGUMENTS
+.TP
+.I program-path
+path to the program to test
+.TP
+.I test-directory
+directory containing test scripts
+.SH OPTIONS
+.TP
+.B \-s
+silence all output except the final result
+.TP
+.B \-v
+show output from each test
+.SH EXIT STATUS
+0 if all tests pass, 1 if the script fails, 2 if any test fails.
+.SH SEE ALSO
+.B sh(1), bash(1)
