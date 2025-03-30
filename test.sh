@@ -1,7 +1,7 @@
 #!/bin/sh
 # see LICENSE file for copyright and license information
 
-USAGE="Usage: $0 <PROGRAM> <DIR>"
+USAGE="Usage: $0 <PROGRAM> <DIR> [OPTIONS]"
 
 test "$1" = "-h" &&
 	echo $USAGE &&
