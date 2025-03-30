@@ -3,4 +3,4 @@
 ##DSC 123
 ##ERR 123
 $1
-exit 1
+exit 0
