@@ -19,33 +19,41 @@ PROG="$1"
 TESTS="$2"
 
 VERBOSITY=1
+DRY=""
 
 if ! [ -z $3 ]; then
 	while [[ ! -z "$3" ]]; do
 		case "$3" in
+			-d)
+				DRY=1
+			;;
 			-s) 
 				VERBOSITY=0
-				shift
 			;;
 			-v) 
 				VERBOSITY=2
-				shift
 			;;
 			*) 
 				echo "Unrecognized option: $3"
 				exit 1
 			;;
 		esac
+		shift
 	done
 fi
 
 ERR=""
 
-SCRIPTS=$(find $TESTS -type f -name "*.sh")
+SCRIPTS=$(find "./$TESTS" -type f -name "*.sh")
 
 test -z "$SCRIPTS" &&
 	echo 123 &&
 	exit 1
+
+test -z "$DRY" || {
+	echo "$SCRIPTS" &&
+	exit 0
+}
 
 _echo() {
 	test "$VERBOSITY" = "0" && return

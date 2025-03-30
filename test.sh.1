@@ -5,7 +5,7 @@ test.sh \- run tests on a program
 .B test.sh
 .IR program-path
 .IR test-directory
-.RB [ \-sv ]
+.RB [ \-dsv ]
 .SH DESCRIPTION
 runs shell script tests on a program
 .SH ARGUMENTS
@@ -16,6 +16,9 @@ path to the program to test
 .I test-directory
 directory containing test scripts
 .SH OPTIONS
+.TP
+.B \-d
+dry run. prints the tests that would be run
 .TP
 .B \-s
 silence all output except the final result
