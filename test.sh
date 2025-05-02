@@ -47,7 +47,7 @@ ERR=""
 SCRIPTS=$(find "./$TESTS" -type f -name "*.sh")
 
 test -z "$SCRIPTS" &&
-	echo 123 &&
+	echo No shell script was found in directory ./$TESTS &&
 	exit 1
 
 test -z "$DRY" || {
